@@ -1,4 +1,5 @@
 import React from "react";
+import Levels from "../Levels/Levels";
 
 export const Menu = () => {
   return (
@@ -6,16 +7,9 @@ export const Menu = () => {
       <div className="menu__header">
         <h1>Color Game</h1>
       </div>
-      <div className="menu__difficulty">
-        <h2>Select level of difficulty</h2>
-        <div className="menu__levels">
-          <button className="btn__level--easy ">Easy</button>
-          <button className="btn__level--medium ">Medium</button>
-          <button className="btn__level--hard ">Hard</button>{" "}
-        </div>
-      </div>
+      <Levels />
       <div className="menu__start">
-        <button className="btn__start">Start</button>
+        <button className="btn__start">START</button>
       </div>
       <div className="menu__info">?</div>
     </div>

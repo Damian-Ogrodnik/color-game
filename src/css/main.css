@@ -34,6 +34,17 @@
   font-size: 3rem;
 }
 
+.menu__start {
+  position: absolute;
+  bottom: 5rem;
+}
+
+.menu__info {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+
 .menu__difficulty {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,16 +61,5 @@
 .menu__difficulty h2 {
   font-size: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.menu__start {
-  position: absolute;
-  bottom: 5rem;
-}
-
-.menu__info {
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
 }
 /*# sourceMappingURL=main.css.map */
