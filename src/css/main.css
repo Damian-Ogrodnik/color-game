@@ -3,6 +3,62 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 40px;
+  font-size: 16px;
+}
+
+.menu {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.menu__header {
+  position: absolute;
+  top: 2.5rem;
+}
+
+.menu__header h1 {
+  font-size: 3rem;
+}
+
+.menu__difficulty {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.menu__difficulty h2 {
+  font-size: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.menu__start {
+  position: absolute;
+  bottom: 5rem;
+}
+
+.menu__info {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
 }
 /*# sourceMappingURL=main.css.map */
