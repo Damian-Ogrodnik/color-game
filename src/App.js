@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./css/main.css";
+import { store } from "./store";
 import { Menu } from "./components/Menu";
 import { Game } from "./components/Game/Game";
 
-function App() {
-  return (
-    <div className="App">
-      <Menu></Menu>
-      <Game></Game>
-    </div>
-  );
-}
+const App = () => {
+  const {
+    state: { gameStarted }
+  } = useContext(store);
+
+  return <>{gameStarted ? <Game /> : <Menu />}</>;
+};
 
 export default App;
