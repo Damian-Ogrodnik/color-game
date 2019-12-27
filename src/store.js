@@ -7,8 +7,8 @@ const { Provider } = store;
 const StateProvider = ({ children }) => {
   const [state, dispatch] = useReducer((state, action) => {
     switch (action.type) {
-      case "GET_STATE":
-        return state;
+      case "START_GAME":
+        return { ...state, gameStarted: true };
       default:
         throw new Error();
     }

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Levels() {
+export const Levels = () => {
   return (
     <div className="menu__difficulty">
       <h2>Select level of difficulty</h2>
@@ -11,6 +11,4 @@ function Levels() {
       </div>
     </div>
   );
-}
-
-export default Levels;
+};
