@@ -1,4 +1,5 @@
 .menu {
+  background-color: $background-color;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -6,22 +7,36 @@
   justify-content: center;
   flex-direction: column;
 
+  &__wrapper {
+    padding: 1rem 1.5rem;
+    background-color: $primary-color;
+    border: 0.5rem solid $secondary-color;
+    border-radius: 1rem;
+  }
+
   &__header {
-    position: absolute;
-    top: 2.5rem;
     h1 {
       font-size: 3rem;
     }
   }
 
   &__start {
-    position: absolute;
-    bottom: 5rem;
+    display: flex;
+    justify-content: center;
   }
 
   &__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     bottom: 2rem;
     right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: $primary-color;
+    border: 0.1rem solid $secondary-color;
+    border-radius: 1rem;
+    font-weight: 700;
   }
 }

@@ -8,6 +8,7 @@
 }
 
 .menu {
+  background-color: #e0dcce;
   height: 100vh;
   width: 100%;
   display: -webkit-box;
@@ -25,9 +26,11 @@
           flex-direction: column;
 }
 
-.menu__header {
-  position: absolute;
-  top: 2.5rem;
+.menu__wrapper {
+  padding: 1rem 1.5rem;
+  background-color: #ad343e;
+  border: 0.5rem solid #470100;
+  border-radius: 1rem;
 }
 
 .menu__header h1 {
@@ -35,17 +38,38 @@
 }
 
 .menu__start {
-  position: absolute;
-  bottom: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .menu__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
   bottom: 2rem;
   right: 2rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: #ad343e;
+  border: 0.1rem solid #470100;
+  border-radius: 1rem;
+  font-weight: 700;
 }
 
 .menu__difficulty {
+  padding-top: 10rem;
+  padding-bottom: 7.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
