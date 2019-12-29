@@ -10,6 +10,7 @@
     background-color: $primary-color;
     border: 0.5rem solid $secondary-color;
     border-radius: 1rem;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
 
   &__header {

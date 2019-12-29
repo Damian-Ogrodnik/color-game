@@ -7,6 +7,36 @@
   font-family: "Poppins", sans-serif;
 }
 
+.game {
+  width: 100%;
+  height: 100vh;
+  border: 3px solid red;
+}
+
+.menu__difficulty {
+  padding-top: 10rem;
+  padding-bottom: 7.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.menu__difficulty h2 {
+  font-size: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.btn.selected {
+  background-color: #f2af29;
+}
+
 .menu {
   background-color: #e0dcce;
   height: 100vh;
@@ -31,6 +61,8 @@
   background-color: #ad343e;
   border: 0.5rem solid #470100;
   border-radius: 1rem;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .menu__header {
@@ -80,30 +112,6 @@
   border: 0.1rem solid #470100;
   border-radius: 1rem;
   font-weight: 700;
-}
-
-.menu__difficulty {
-  padding-top: 10rem;
-  padding-bottom: 7.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.menu__difficulty h2 {
-  font-size: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-.btn.selected {
-  background-color: #f2af29;
 }
 
 button {

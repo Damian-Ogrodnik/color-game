@@ -21,5 +21,5 @@ export const Game = () => {
         return <Error msg={"Something went wrong..."} />;
     }
   };
-  return <div>{renderLevel()}</div>;
+  return <div className="game">{renderLevel()}</div>;
 };
