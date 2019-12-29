@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from "react";
 
-const initialState = { gameStarted: false };
+const initialState = { gameStarted: false, selectedLevel: "" };
 const store = createContext(initialState);
 const { Provider } = store;
 
@@ -9,6 +9,8 @@ const StateProvider = ({ children }) => {
     switch (action.type) {
       case "START_GAME":
         return { ...state, gameStarted: true };
+      case "SELECT_LEVEL":
+        return { ...state, selectedLevel: action.selectedLevel };
       default:
         throw new Error();
     }

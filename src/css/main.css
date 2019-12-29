@@ -124,4 +124,8 @@ button:active {
   border: 0.2rem solid #470100;
   background-color: #f2af29;
 }
+
+button.selected {
+  background-color: #f2af29;
+}
 /*# sourceMappingURL=main.css.map */
