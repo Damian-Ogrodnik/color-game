@@ -9,3 +9,9 @@
     padding-bottom: 1.5rem;
   }
 }
+
+.btn {
+  &.selected {
+    background-color: $tertiary-color;
+  }
+}

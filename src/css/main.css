@@ -102,6 +102,10 @@
   padding-bottom: 1.5rem;
 }
 
+.btn.selected {
+  background-color: #f2af29;
+}
+
 button {
   outline: 0;
   width: 7.5rem;
@@ -122,10 +126,6 @@ button:active {
   -webkit-transform: translateY(4px);
           transform: translateY(4px);
   border: 0.2rem solid #470100;
-  background-color: #f2af29;
-}
-
-button.selected {
   background-color: #f2af29;
 }
 /*# sourceMappingURL=main.css.map */
