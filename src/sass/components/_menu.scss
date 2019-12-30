@@ -6,6 +6,7 @@
   flex-direction: column;
 
   &__wrapper {
+    position: relative;
     padding: 1rem 1.5rem;
     background-color: $primary-color;
     border: 0.5rem solid $secondary-color;
@@ -22,6 +23,20 @@
 
   &__start {
     @include flex-center;
+  }
+
+  &__error {
+    @include flex-center;
+    position: absolute;
+    bottom: 4.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    font-style: italic;
+    font-size: 0.75rem;
+    color: $error-font-color;
   }
 
   &__info {

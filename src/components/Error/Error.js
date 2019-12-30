@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Error = ({ msg }) => {
-  return <div>{msg}</div>;
+export const Error = ({ msg, class_Name }) => {
+  return <div className={class_Name}>{msg}</div>;
 };

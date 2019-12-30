@@ -10,6 +10,7 @@ export const Levels = () => {
 
   const setLevel = ({ target: { value } }) => {
     dispatch({ type: "SELECT_LEVEL", selectedLevel: value });
+    dispatch({ type: "START_ERROR", startError: false });
   };
 
   const isActive = level => {
