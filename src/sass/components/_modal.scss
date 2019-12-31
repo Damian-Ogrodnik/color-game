@@ -1,0 +1,16 @@
+.modal {
+  @include flex-center;
+  flex-direction: column;
+  &__title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  &__text {
+    font-size: 1rem;
+  }
+  &__btn {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+}

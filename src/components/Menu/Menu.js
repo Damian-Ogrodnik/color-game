@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { store } from "../../store";
 import { Levels } from "../Levels";
 import { Error } from "../Error";
+import { InfoModal } from "../InfoModal";
 
 export const Menu = () => {
   const globalState = useContext(store);
@@ -41,7 +42,13 @@ export const Menu = () => {
           </button>
         </div>
       </div>
-      <div className="menu__info">?</div>
+      <div
+        className="menu__info"
+        onClick={() => dispatch({ type: "OPEN_MODAL", openModal: true })}
+      >
+        ?
+      </div>
+      <InfoModal />
     </div>
   );
 };

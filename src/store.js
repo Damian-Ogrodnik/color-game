@@ -3,7 +3,8 @@ import React, { createContext, useReducer } from "react";
 const initialState = {
   gameStarted: false,
   selectedLevel: false,
-  startError: false
+  startError: false,
+  openModal: false
 };
 const store = createContext(initialState);
 const { Provider } = store;
@@ -15,6 +16,8 @@ const StateProvider = ({ children }) => {
         return { ...state, gameStarted: true };
       case "START_ERROR":
         return { ...state, startError: action.startError };
+      case "OPEN_MODAL":
+        return { ...state, openModal: action.openModal };
       case "SELECT_LEVEL":
         return { ...state, selectedLevel: action.selectedLevel };
       default:
