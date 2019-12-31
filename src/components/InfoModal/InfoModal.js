@@ -43,7 +43,7 @@ export const InfoModal = () => {
           className="modal__btn"
           onClick={() => dispatch({ type: "OPEN_MODAL", openModal: false })}
         >
-          Got it!
+          GOT IT!
         </button>
       </div>
     </Modal>
