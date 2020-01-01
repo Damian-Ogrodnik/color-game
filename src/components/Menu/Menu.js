@@ -3,7 +3,6 @@ import { store } from "../../store";
 import { Levels } from "../Levels";
 import { Error } from "../Error";
 import { InfoModal } from "../InfoModal";
-import { StopWatch } from "../StopWatch";
 
 export const Menu = () => {
   const globalState = useContext(store);
@@ -50,7 +49,6 @@ export const Menu = () => {
         ?
       </div>
       <InfoModal />
-      <StopWatch />
     </div>
   );
 };

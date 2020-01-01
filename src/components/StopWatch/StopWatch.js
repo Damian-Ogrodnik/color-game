@@ -47,8 +47,10 @@ export const StopWatch = () => {
   // };
 
   return (
-    <div>
-      {renderMinutes()}:{renderSeconds()}
+    <div className="game__timer">
+      <div className="game__timer--top">
+        {renderMinutes()}:{renderSeconds()}
+      </div>
     </div>
   );
 };
