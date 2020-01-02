@@ -4,6 +4,7 @@ import { EasyLevel } from "../EasyLevel";
 import { MediumLevel } from "../MediumLevel";
 import { HardLevel } from "../HardLevel";
 import { Error } from "../Error";
+import { StopWatch } from "../StopWatch";
 
 export const Game = () => {
   const {
@@ -21,5 +22,10 @@ export const Game = () => {
         return <Error msg={"Something went wrong..."} />;
     }
   };
-  return <div className="game">{renderLevel()}</div>;
+  return (
+    <div className="game">
+      <StopWatch />
+      {renderLevel()}
+    </div>
+  );
 };

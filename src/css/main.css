@@ -173,6 +173,18 @@
   padding: 0.25rem 0;
 }
 
+.game__easy {
+  height: 90vh;
+}
+
+.game__medium {
+  height: 90vh;
+}
+
+.game__hard {
+  height: 90vh;
+}
+
 .menu__difficulty {
   padding-top: 10rem;
   padding-bottom: 7.5rem;
