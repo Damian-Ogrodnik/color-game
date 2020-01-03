@@ -19,6 +19,12 @@
   }
   &__easy {
     height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "card1 card2 card3"
+      "card4 card5 card6";
   }
   &__medium {
     height: 90vh;
@@ -26,4 +32,10 @@
   &__hard {
     height: 90vh;
   }
+}
+
+.card {
+  border: 0.3rem solid black;
+  border-radius: 1rem;
+  margin: 2rem;
 }
