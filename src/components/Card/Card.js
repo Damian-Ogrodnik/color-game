@@ -7,8 +7,11 @@ export const Card = ({ cardNum, colors }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    console.log("Color changed");
+  }, [color]);
+
   const randomColor = target => {
-    console.log(target.style.backgroundColor);
     const color = colors[Math.floor(Math.random() * colors.length)];
     color === target.style.backgroundColor
       ? randomColor(target)

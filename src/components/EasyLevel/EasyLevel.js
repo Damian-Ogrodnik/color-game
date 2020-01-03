@@ -7,7 +7,7 @@ export const EasyLevel = () => {
     const { cardsNum, colors } = easyData;
     const cardsArray = [];
     for (let i = 1; i <= cardsNum; i++) {
-      cardsArray.push(<Card cardNum={i} colors={colors} />);
+      cardsArray.push(<Card key={i} cardNum={i} colors={colors} />);
     }
     return cardsArray;
   };
