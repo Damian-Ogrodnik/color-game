@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { store } from "../../store";
 import { EasyLevel } from "../EasyLevel";
 import { MediumLevel } from "../MediumLevel";
@@ -8,7 +8,7 @@ import { StopWatch } from "../StopWatch";
 
 export const Game = () => {
   const {
-    state: { selectedLevel }
+    state: { selectedLevel, clicks }
   } = useContext(store);
   const renderLevel = () => {
     switch (selectedLevel) {
@@ -22,6 +22,11 @@ export const Game = () => {
         return <Error msg={"Something went wrong..."} />;
     }
   };
+
+  useEffect(() => {
+    console.log(clicks);
+  }, [clicks]);
+
   return (
     <div className="game">
       <StopWatch />

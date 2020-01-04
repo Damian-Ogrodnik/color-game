@@ -4,7 +4,9 @@ const initialState = {
   gameStarted: false,
   selectedLevel: false,
   startError: false,
-  openModal: false
+  openModal: false,
+  colorsArray: [],
+  clicks: 0
 };
 const store = createContext(initialState);
 const { Provider } = store;
@@ -20,6 +22,10 @@ const StateProvider = ({ children }) => {
         return { ...state, openModal: action.openModal };
       case "SELECT_LEVEL":
         return { ...state, selectedLevel: action.selectedLevel };
+      case "SET_COLORS_ARRAY":
+        return { ...state, colorsArray: action.colorsArray };
+      case "ADD_CLICK":
+        return { ...state, clicks: state.clicks + 1 };
       default:
         throw new Error();
     }
