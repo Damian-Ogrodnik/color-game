@@ -5,12 +5,13 @@ import { MediumLevel } from "../MediumLevel";
 import { HardLevel } from "../HardLevel";
 import { Error } from "../Error";
 import { StopWatch } from "../StopWatch";
+import { Summary } from "../Summary";
 
 export const Game = () => {
   const globalState = useContext(store);
   const { dispatch } = globalState;
   const {
-    state: { selectedLevel, colorsArray, clicks }
+    state: { selectedLevel, colorsArray, clicks, gameFinished }
   } = useContext(store);
   useEffect(() => {
     checkColors();
@@ -43,9 +44,15 @@ export const Game = () => {
   };
 
   return (
-    <div className="game">
-      <StopWatch />
-      {renderLevel()}
+    <div>
+      {gameFinished ? (
+        <Summary />
+      ) : (
+        <div className="game">
+          <StopWatch />
+          {renderLevel()}
+        </div>
+      )}
     </div>
   );
 };
