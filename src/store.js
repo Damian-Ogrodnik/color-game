@@ -6,7 +6,8 @@ const initialState = {
   startError: false,
   openModal: false,
   colorsArray: [],
-  clicks: 0
+  clicks: 0,
+  gameFinished: false
 };
 const store = createContext(initialState);
 const { Provider } = store;
@@ -26,6 +27,8 @@ const StateProvider = ({ children }) => {
         return { ...state, colorsArray: action.colorsArray };
       case "ADD_CLICK":
         return { ...state, clicks: state.clicks + 1 };
+      case "FINISH_GAME":
+        return { ...state, gameFinished: action.gameFinished };
       default:
         throw new Error();
     }

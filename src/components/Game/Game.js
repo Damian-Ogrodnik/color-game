@@ -7,9 +7,28 @@ import { Error } from "../Error";
 import { StopWatch } from "../StopWatch";
 
 export const Game = () => {
+  const globalState = useContext(store);
+  const { dispatch } = globalState;
   const {
-    state: { selectedLevel, clicks }
+    state: { selectedLevel, colorsArray, clicks }
   } = useContext(store);
+  useEffect(() => {
+    checkColors();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [clicks]);
+
+  const checkColors = () => {
+    const arrayColors = [];
+    if (colorsArray.length) {
+      colorsArray.forEach(({ color }) => {
+        arrayColors.push(color);
+      });
+      const collorsSet = new Set(arrayColors);
+      if (collorsSet.size === 1)
+        dispatch({ type: "FINISH_GAME", gameFinished: true });
+    }
+  };
+
   const renderLevel = () => {
     switch (selectedLevel) {
       case "EASY":
@@ -22,10 +41,6 @@ export const Game = () => {
         return <Error msg={"Something went wrong..."} />;
     }
   };
-
-  useEffect(() => {
-    console.log(clicks);
-  }, [clicks]);
 
   return (
     <div className="game">
