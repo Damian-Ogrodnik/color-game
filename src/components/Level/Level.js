@@ -1,15 +1,14 @@
 import React from "react";
 import { Card } from "../Card";
-import { easyData } from "../../data/data";
 
-export const EasyLevel = () => {
+export const Level = ({ data, level }) => {
   const renderCards = () => {
-    const { cardsNum, colors } = easyData;
+    const { cardsNum, colors } = data;
     const cardsArray = [];
     for (let i = 1; i <= cardsNum; i++) {
       cardsArray.push(<Card key={i} cardNum={i} colors={colors} />);
     }
     return cardsArray;
   };
-  return <div className="game__easy">{renderCards()}</div>;
+  return <div className={`game__${level}`}>{renderCards()}</div>;
 };

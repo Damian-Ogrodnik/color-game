@@ -1,11 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { store } from "../../store";
-import { EasyLevel } from "../EasyLevel";
-import { MediumLevel } from "../MediumLevel";
-import { HardLevel } from "../HardLevel";
 import { Error } from "../Error";
 import { StopWatch } from "../StopWatch";
 import { Summary } from "../Summary";
+import { Level } from "../Level";
+import { easyData, mediumData, hardData } from "../../data/data";
 
 export const Game = () => {
   const globalState = useContext(store);
@@ -33,11 +32,11 @@ export const Game = () => {
   const renderLevel = () => {
     switch (selectedLevel) {
       case "EASY":
-        return <EasyLevel />;
+        return <Level data={easyData} level={"easy"} />;
       case "MEDIUM":
-        return <MediumLevel />;
+        return <Level data={mediumData} level={"medium"} />;
       case "HARD":
-        return <HardLevel />;
+        return <Level data={hardData} level={"hard"} />;
       default:
         return <Error msg={"Something went wrong..."} />;
     }
