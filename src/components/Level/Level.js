@@ -10,5 +10,5 @@ export const Level = ({ data, level }) => {
     }
     return cardsArray;
   };
-  return <div className={`game__${level}`}>{renderCards()}</div>;
+  return <div className={`level game__${level}`}>{renderCards()}</div>;
 };

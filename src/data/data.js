@@ -9,6 +9,6 @@ export const mediumData = {
 };
 
 export const hardData = {
-  cardsNum: 10,
+  cardsNum: 30,
   colors: ["darkred", "darkblue", "darkgreen", "gold", "darkorange"]
 };
