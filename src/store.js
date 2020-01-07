@@ -31,7 +31,13 @@ const StateProvider = ({ children }) => {
         return { ...state, gameFinished: action.gameFinished };
       case "RESET_GAME":
         return {
-          ...initialState
+          gameStarted: false,
+          selectedLevel: false,
+          startError: false,
+          openModal: false,
+          colorsArray: [],
+          clicks: 0,
+          gameFinished: false
         };
       default:
         throw new Error();
