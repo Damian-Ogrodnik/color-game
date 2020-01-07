@@ -29,6 +29,10 @@ const StateProvider = ({ children }) => {
         return { ...state, clicks: state.clicks + 1 };
       case "FINISH_GAME":
         return { ...state, gameFinished: action.gameFinished };
+      case "RESET_GAME":
+        return {
+          ...initialState
+        };
       default:
         throw new Error();
     }

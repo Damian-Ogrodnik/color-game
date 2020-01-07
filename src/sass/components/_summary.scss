@@ -1,0 +1,41 @@
+.summary {
+  background-color: $background-color;
+  height: 100vh;
+  width: 100%;
+  @include flex-center;
+  flex-direction: column;
+  &__wrapper {
+    @include flex-center;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    background-color: $primary-color;
+    border: 0.5rem solid $secondary-color;
+    border-radius: 1rem;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+
+  &__time {
+    padding: 2rem 0 2rem 0;
+  }
+
+  h1 {
+    @include flex-center;
+    font-size: 3rem;
+  }
+  h2 {
+    @include flex-center;
+    font-size: 2rem;
+  }
+}
+
+.time {
+  &__heading {
+    @include flex-center;
+    font-size: 1.5rem;
+  }
+  &__timer {
+    @include flex-center;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}

@@ -19,7 +19,7 @@ export const Levels = () => {
 
   return (
     <div className="menu__difficulty">
-      <h2>Select level of difficulty</h2>
+      <h2>Select Level of Difficulty</h2>
       <div className="menu__levels">
         <button
           className={`btn btn__level--easy ${isActive("EASY")}`}
