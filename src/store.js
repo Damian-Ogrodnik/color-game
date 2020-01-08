@@ -7,6 +7,7 @@ const initialState = {
   openModal: false,
   colorsArray: [],
   clicks: 0,
+  time: {},
   gameFinished: false
 };
 const store = createContext(initialState);
@@ -29,6 +30,8 @@ const StateProvider = ({ children }) => {
         return { ...state, clicks: state.clicks + 1 };
       case "FINISH_GAME":
         return { ...state, gameFinished: action.gameFinished };
+      case "SET_TIME":
+        return { ...state, time: action.time };
       case "RESET_GAME":
         return {
           gameStarted: false,
@@ -37,6 +40,7 @@ const StateProvider = ({ children }) => {
           openModal: false,
           colorsArray: [],
           clicks: 0,
+          time: 0,
           gameFinished: false
         };
       default:
