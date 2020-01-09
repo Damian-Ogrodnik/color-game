@@ -4,6 +4,17 @@ import { store } from "../../store";
 export const Summary = () => {
   const globalState = useContext(store);
   const { dispatch } = globalState;
+  const {
+    state: { time }
+  } = useContext(store);
+
+  const renderTime = () => {
+    let { minutes, seconds, miliSeconds } = time;
+    if (minutes < 10) minutes = `0${minutes}`;
+    if (seconds < 10) seconds = `0${seconds}`;
+    return `${minutes}:${seconds}:${miliSeconds}`;
+  };
+
   return (
     <div className="summary">
       <div className="summary__wrapper">
@@ -13,7 +24,7 @@ export const Summary = () => {
         </div>
         <div className="summary__time">
           <div className="time__heading">Your Time</div>
-          <div className="time__timer">00:00</div>
+          <div className="time__timer">{renderTime()}</div>
         </div>
         <button onClick={() => dispatch({ type: "RESET_GAME" })}>
           TRY AGAIN

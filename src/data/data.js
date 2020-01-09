@@ -1,5 +1,5 @@
 export const easyData = {
-  cardsNum: 2,
+  cardsNum: 6,
   colors: ["darkred", "darkblue", "darkgreen", "gold", "darkorange"]
 };
 

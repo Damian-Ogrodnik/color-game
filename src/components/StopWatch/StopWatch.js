@@ -5,7 +5,7 @@ export const StopWatch = () => {
   const globalState = useContext(store);
   const { dispatch } = globalState;
   const {
-    state: { clicks, gameFinished }
+    state: { clicks }
   } = useContext(store);
 
   const [minutes, setMinutes] = useState(0);
