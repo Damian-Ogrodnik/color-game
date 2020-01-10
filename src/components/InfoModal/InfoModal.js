@@ -29,15 +29,13 @@ export const InfoModal = () => {
   return (
     <Modal isOpen={openModal} style={customStyles} contentLabel="Example Modal">
       <div className="modal">
-        <h2 className="modal__title">How to play?</h2>
-        <p className="modal__text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+        <h2 className="modal__title">Welcome to my color-game!</h2>
+        <p className="modal__text--body">
+          I created this simple game to practise context state managment in
+          React. To start the game you have to choose the level of difficulty
+          and press the start button. Then you will see colorful blocks. Your
+          task is to set the same color on each block as quick as possible. You
+          can change color of a block by clicking on it.{" "}
         </p>
         <button
           className="modal__btn"

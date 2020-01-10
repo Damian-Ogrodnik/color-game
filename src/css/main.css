@@ -390,6 +390,8 @@
 
 .modal__text {
   font-size: 1rem;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .modal__btn {
