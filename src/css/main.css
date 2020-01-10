@@ -7,6 +7,12 @@
   font-family: "Poppins", sans-serif;
 }
 
+@media only screen and (max-width: 600px) {
+  * {
+    font-size: 10px;
+  }
+}
+
 .cube {
   position: absolute;
   margin: 50px;
@@ -185,10 +191,26 @@
       grid-template-areas: "card1 card2 card3 card4 card5" "card6 card7 card8 card9 card10";
 }
 
+@media only screen and (max-width: 600px) {
+  .game__medium {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "card1 card2" "card3 card4" "card5 card6" "card7 card8" "card9 card10";
+  }
+}
+
 .game__hard {
   -ms-grid-columns: (1fr)[10];
       grid-template-columns: repeat(10, 1fr);
-      grid-template-areas: "card1 card2 card3 card4 card5 card6 card7 card8 card9 card10" "card11 card12 card13 card14 card15 card16 card17 card18 card19 card20" "card21 card22 card23 card24 card25 card26 card27 card28 card29 card30";
+      grid-template-areas: "card1 card2 card3 card4 card5 card6 card7 card8 card9 card10" "card11 card12 card13 card14 card15 card16 card17 card18 card19 card20";
+}
+
+@media only screen and (max-width: 600px) {
+  .game__hard {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "card1 card2" "card3 card4" "card5 card6" "card7 card8" "card9 card10" "card11 card12" "card13 card14" "card15 card16" "card17 card18" "card19 card20";
+  }
 }
 
 .card {
