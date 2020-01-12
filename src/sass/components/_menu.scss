@@ -38,6 +38,7 @@
     font-size: 0.75rem;
     color: $error-font-color;
     @media only screen and (max-width: 600px) {
+      text-align: center;
       font-size: 1.25rem;
     }
   }
