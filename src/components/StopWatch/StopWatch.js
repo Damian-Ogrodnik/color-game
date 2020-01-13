@@ -13,11 +13,10 @@ export const StopWatch = () => {
   const [miliSeconds, setMiliSeconds] = useState(0);
 
   useEffect(() => {
-    let miliSec = setTimeout(() => {
-      setMiliSeconds(miliSeconds + 10);
+    setTimeout(() => {
+      setSeconds(seconds + 1);
       // dispatch({ type: "SET_TIME", minutes, seconds, miliSeconds });
-    }, 10);
-    return () => clearInterval(miliSec);
+    }, 1000);
   });
 
   useEffect(() => {
@@ -32,10 +31,6 @@ export const StopWatch = () => {
   };
 
   const renderSeconds = () => {
-    if (miliSeconds > 1000) {
-      setMiliSeconds(0);
-      setSeconds(seconds + 1);
-    }
     if (seconds < 10) {
       return `0${seconds}`;
     } else if (seconds > 59) {
