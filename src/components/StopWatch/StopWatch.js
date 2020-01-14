@@ -15,8 +15,13 @@ export const StopWatch = () => {
   useEffect(() => {
     setTimeout(() => {
       setSeconds(seconds + 1);
-      // dispatch({ type: "SET_TIME", minutes, seconds, miliSeconds });
     }, 1000);
+  });
+
+  useEffect(() => {
+    setTimeout(() => {
+      miliSeconds > 1000 ? setMiliSeconds(0) : setMiliSeconds(miliSeconds + 1);
+    }, 1);
   });
 
   useEffect(() => {
