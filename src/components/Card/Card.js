@@ -7,24 +7,22 @@ export const Card = ({ cardNum, colors }) => {
   const {
     state: { colorsArray }
   } = useContext(store);
+
   const [color, setColor] = useState("");
+
   useEffect(() => {
     setColor(colors[Math.floor(Math.random() * colors.length)]);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [colors]);
 
   useEffect(() => {
     if (color !== "") {
       const pushedArray = colorsArray;
-      if (pushedArray[cardNum - 1]) {
-        pushedArray[cardNum - 1] = { id: cardNum, color: color };
-      } else {
-        pushedArray.push({ id: cardNum, color: color });
-      }
+      pushedArray[cardNum - 1]
+        ? (pushedArray[cardNum - 1] = { id: cardNum, color: color })
+        : pushedArray.push({ id: cardNum, color: color });
       dispatch({ type: "SET_COLORS_ARRAY", colorsArray: pushedArray });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [color]);
+  }, [cardNum, color, colorsArray, dispatch]);
 
   const randomColor = target => {
     const color = colors[Math.floor(Math.random() * colors.length)];
