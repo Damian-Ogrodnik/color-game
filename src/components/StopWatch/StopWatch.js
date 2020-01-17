@@ -13,15 +13,17 @@ export const StopWatch = () => {
   const [miliSeconds, setMiliSeconds] = useState(0);
 
   useEffect(() => {
-    setTimeout(() => {
+    let getSeconds = setTimeout(() => {
       setSeconds(seconds + 1);
     }, 1000);
-  });
+    return () => clearInterval(getSeconds);
+  }, [seconds]);
 
   useEffect(() => {
-    setTimeout(() => {
+    let getMiliSeconds = setTimeout(() => {
       miliSeconds > 1000 ? setMiliSeconds(0) : setMiliSeconds(miliSeconds + 1);
     }, 1);
+    return () => clearInterval(getMiliSeconds);
   });
 
   useEffect(() => {
