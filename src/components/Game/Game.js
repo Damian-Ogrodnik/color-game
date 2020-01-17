@@ -1,9 +1,12 @@
 import React, { useContext, useEffect } from "react";
+
 import { store } from "../../store";
+
 import { Error } from "../Error";
 import { StopWatch } from "../StopWatch";
 import { Summary } from "../Summary";
 import { Level } from "../Level";
+
 import { easyData, mediumData, hardData } from "../../data/data";
 
 export const Game = () => {
@@ -12,12 +15,8 @@ export const Game = () => {
   const {
     state: { selectedLevel, colorsArray, clicks, gameFinished }
   } = useContext(store);
-  useEffect(() => {
-    checkColors();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [clicks]);
 
-  const checkColors = () => {
+  useEffect(() => {
     const arrayColors = [];
     if (colorsArray.length) {
       colorsArray.forEach(({ color }) => {
@@ -27,7 +26,7 @@ export const Game = () => {
       if (collorsSet.size === 1)
         dispatch({ type: "FINISH_GAME", gameFinished: true });
     }
-  };
+  }, [clicks, colorsArray, dispatch]);
 
   const renderLevel = () => {
     switch (selectedLevel) {
