@@ -5,6 +5,7 @@ import { Levels } from "../Levels";
 import { Error } from "../Error";
 import { Help } from "../Help";
 import { Start } from "../Start";
+import { Header } from "../Header";
 
 export const Menu = () => {
   const {
@@ -25,9 +26,7 @@ export const Menu = () => {
   return (
     <div className="menu">
       <div className="menu__wrapper">
-        <div className="menu__header">
-          <h1>Color Game</h1>
-        </div>
+        <Header classTitle={"menu"} title={"Color Game"} />
         <Levels />
         {renderError()}
         <Start />
