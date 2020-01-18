@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import Modal from "react-modal";
+
 import { store } from "../../store";
 
 const customStyles = {
