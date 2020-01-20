@@ -26,9 +26,12 @@ export const Summary = () => {
           <div className="time__heading">Your Time</div>
           <div className="time__timer">{renderTime()}</div>
         </div>
-        <button onClick={() => dispatch({ type: "RESET_GAME" })}>
-          TRY AGAIN
-        </button>
+        <div className="summary__navigation">
+          <button onClick={() => dispatch({ type: "RESET_GAME" })}>
+            TRY AGAIN
+          </button>
+          <button>POST </button>
+        </div>
       </div>
     </div>
   );

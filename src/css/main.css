@@ -477,6 +477,15 @@
   font-size: 2rem;
 }
 
+.summary__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+
 .time__heading {
   display: -webkit-box;
   display: -ms-flexbox;

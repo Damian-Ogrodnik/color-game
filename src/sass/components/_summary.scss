@@ -26,6 +26,12 @@
     @include flex-center;
     font-size: 2rem;
   }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
 }
 
 .time {
