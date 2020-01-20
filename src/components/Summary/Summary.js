@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { store } from "../../store";
 
+import { Scoreboard } from "../Scoreboard";
+
 export const Summary = () => {
   const globalState = useContext(store);
   const { dispatch } = globalState;
@@ -30,7 +32,7 @@ export const Summary = () => {
           <button onClick={() => dispatch({ type: "RESET_GAME" })}>
             TRY AGAIN
           </button>
-          <button>POST </button>
+          <Scoreboard />
         </div>
       </div>
     </div>

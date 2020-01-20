@@ -8,7 +8,8 @@ const initialState = {
   colorsArray: [],
   clicks: 0,
   time: {},
-  gameFinished: false
+  gameFinished: false,
+  openScoreModal: false
 };
 const store = createContext(initialState);
 const { Provider } = store;
@@ -32,6 +33,8 @@ const StateProvider = ({ children }) => {
         return { ...state, gameFinished: action.gameFinished };
       case "SET_TIME":
         return { ...state, time: action.time };
+      case "OPEN_SCORE_MODAL":
+        return { ...state, openScoreModal: action.openScoreModal };
       case "RESET_GAME":
         return {
           gameStarted: false,

@@ -1,0 +1,1 @@
+export { ScoreboardModal } from "./ScoreboardModal";
