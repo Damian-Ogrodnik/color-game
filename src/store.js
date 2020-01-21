@@ -9,7 +9,9 @@ const initialState = {
   clicks: 0,
   time: {},
   gameFinished: true,
-  openScoreModal: false
+  openScoreModal: false,
+  setNickname: false,
+  nickname: null
 };
 const store = createContext(initialState);
 const { Provider } = store;
@@ -35,6 +37,10 @@ const StateProvider = ({ children }) => {
         return { ...state, time: action.time };
       case "OPEN_SCORE_MODAL":
         return { ...state, openScoreModal: action.openScoreModal };
+      case "SET_NICKNAME":
+        return { ...state, setNickname: action.setNickname };
+      case "VALUE_NICKNAME":
+        return { ...state, nickname: action.nickname };
       case "RESET_GAME":
         return {
           gameStarted: false,
