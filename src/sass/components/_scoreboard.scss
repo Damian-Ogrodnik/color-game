@@ -1,0 +1,27 @@
+.scoreboard {
+  &__input {
+    @include flex-center;
+    flex-direction: column;
+
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    input {
+      text-align: center;
+      outline: none;
+      font-weight: 700;
+      font-size: 1.5rem;
+      border-radius: 1rem;
+      border-width: 0.25rem;
+      padding: 0.5rem;
+      background-color: $background-color;
+      border-color: $secondary-color;
+    }
+
+    button {
+      margin-top: 2rem;
+    }
+  }
+}

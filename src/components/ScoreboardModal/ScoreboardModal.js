@@ -4,8 +4,9 @@ import Modal from "react-modal";
 
 import { store } from "../../store";
 
-import { ScoreboardInput } from "../ScoreboardInput";
 import { ScoreboardClose } from "../ScoreboardClose";
+import { ScoreboardInput } from "../ScoreboardInput";
+import { ScoreboardView } from "../ScoreboardView";
 
 const customStyles = {
   content: {
@@ -24,7 +25,7 @@ const customStyles = {
 
 export const ScoreboardModal = () => {
   const {
-    state: { openScoreModal }
+    state: { openScoreModal, setNickname }
   } = useContext(store);
 
   return (
@@ -35,7 +36,7 @@ export const ScoreboardModal = () => {
     >
       <div className="modal">
         <ScoreboardClose />
-        <ScoreboardInput />
+        {setNickname ? <ScoreboardView /> : <ScoreboardInput />}
       </div>
     </Modal>
   );

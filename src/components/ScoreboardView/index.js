@@ -1,0 +1,1 @@
+export { ScoreboardView } from "./ScoreboardView";
