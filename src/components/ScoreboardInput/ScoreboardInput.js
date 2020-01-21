@@ -15,7 +15,8 @@ export const ScoreboardInput = () => {
     console.log(nickname);
   };
 
-  const saveNickname = () => {
+  const saveNickname = e => {
+    e.preventDefault();
     if (!nickname) {
       setError("NO-NICKNAME");
     } else if (nickname.length < 4) {
@@ -47,7 +48,7 @@ export const ScoreboardInput = () => {
   return (
     <div className="scoreboard__input">
       <h2>Enter Your Nickname</h2>
-      <form>
+      <form onSubmit={e => saveNickname(e)}>
         <label>
           <input
             placeholder="Your nickname"
