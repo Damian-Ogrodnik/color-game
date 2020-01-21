@@ -8,7 +8,7 @@ const initialState = {
   colorsArray: [],
   clicks: 0,
   time: {},
-  gameFinished: false,
+  gameFinished: true,
   openScoreModal: false
 };
 const store = createContext(initialState);

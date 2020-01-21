@@ -1,0 +1,1 @@
+export { ScoreboardInput } from "./ScoreboardInput";

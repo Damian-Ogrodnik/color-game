@@ -4,6 +4,9 @@ import Modal from "react-modal";
 
 import { store } from "../../store";
 
+import { ScoreboardInput } from "../ScoreboardInput";
+import { ScoreboardClose } from "../ScoreboardClose";
+
 const customStyles = {
   content: {
     top: "50%",
@@ -20,8 +23,6 @@ const customStyles = {
 };
 
 export const ScoreboardModal = () => {
-  const globalState = useContext(store);
-  const { dispatch } = globalState;
   const {
     state: { openScoreModal }
   } = useContext(store);
@@ -30,18 +31,11 @@ export const ScoreboardModal = () => {
     <Modal
       isOpen={openScoreModal}
       style={customStyles}
-      contentLabel="Example Modal"
+      contentLabel="Scoreboard Modal"
     >
       <div className="modal">
-        <h2 className="modal__title">Scoreboard</h2>
-        <button
-          className="modal__btn"
-          onClick={() =>
-            dispatch({ type: "OPEN_SCORE_MODAL", openScoreModal: false })
-          }
-        >
-          GOT IT!
-        </button>
+        <ScoreboardClose />
+        <ScoreboardInput />
       </div>
     </Modal>
   );
