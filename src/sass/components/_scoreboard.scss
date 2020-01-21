@@ -21,7 +21,24 @@
     }
 
     button {
-      margin-top: 2rem;
+      margin-top: 4rem;
+    }
+  }
+  &__error {
+    @include flex-center;
+    position: absolute;
+    bottom: 4.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    font-style: italic;
+    font-size: 1rem;
+    color: $error-font-color;
+    @media only screen and (max-width: 600px) {
+      text-align: center;
+      font-size: 1.25rem;
     }
   }
 }

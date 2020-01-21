@@ -2,8 +2,11 @@ import React, { useState, useContext } from "react";
 
 import { store } from "../../store";
 
+import { Error } from "../Error";
+
 export const ScoreboardInput = () => {
   const [nickname, setNickname] = useState("");
+  const [error, setError] = useState("");
   const globalState = useContext(store);
   const { dispatch } = globalState;
 
@@ -13,8 +16,32 @@ export const ScoreboardInput = () => {
   };
 
   const saveNickname = () => {
-    dispatch({ type: "VALUE_NICKNAME", nickname });
-    dispatch({ type: "SET_NICKNAME", setNickname: true });
+    if (!nickname) {
+      setError("NO-NICKNAME");
+    } else if (nickname.length < 4) {
+      setError("SHORT-NICKNAME");
+    } else {
+      dispatch({ type: "VALUE_NICKNAME", nickname });
+      dispatch({ type: "SET_NICKNAME", setNickname: true });
+    }
+  };
+
+  const renderError = () => {
+    if (error === "NO-NICKNAME") {
+      return (
+        <Error
+          msg={"You have to enter your nickname before save. "}
+          class_Name={"scoreboard__error"}
+        />
+      );
+    } else if (error === "SHORT-NICKNAME") {
+      return (
+        <Error
+          msg={"Your nickname is to short. "}
+          class_Name={"scoreboard__error"}
+        />
+      );
+    }
   };
 
   return (
@@ -30,6 +57,7 @@ export const ScoreboardInput = () => {
           ></input>
         </label>
       </form>
+      {renderError()}
       <button onClick={() => saveNickname()}>Save</button>
     </div>
   );
