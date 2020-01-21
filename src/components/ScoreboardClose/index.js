@@ -1,0 +1,1 @@
+export { ScoreboardClose } from "./ScoreboardClose";
