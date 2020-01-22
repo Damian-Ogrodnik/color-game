@@ -59,7 +59,7 @@ export const ScoreboardInput = () => {
         </label>
       </form>
       {renderError()}
-      <button onClick={() => saveNickname()}>Save</button>
+      <button onClick={e => saveNickname(e)}>Save</button>
     </div>
   );
 };
