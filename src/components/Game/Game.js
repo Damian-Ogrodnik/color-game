@@ -30,11 +30,11 @@ export const Game = () => {
 
   const renderLevel = () => {
     switch (selectedLevel) {
-      case "EASY":
+      case "easy":
         return <Level data={easyData} level={"easy"} />;
-      case "MEDIUM":
+      case "medium":
         return <Level data={mediumData} level={"medium"} />;
-      case "HARD":
+      case "hard":
         return <Level data={hardData} level={"hard"} />;
       default:
         return <Error msg={"Something went wrong..."} />;
