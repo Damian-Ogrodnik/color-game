@@ -8,7 +8,7 @@ const initialState = {
   colorsArray: [],
   clicks: 0,
   time: {},
-  gameFinished: true,
+  gameFinished: false,
   openScoreModal: false,
   openScoreModalView: false,
   nickname: null

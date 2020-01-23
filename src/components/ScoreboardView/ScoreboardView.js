@@ -1,17 +1,41 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "../../axios/axiosSettings";
 
-import { store } from "../../store";
+import { renderTime } from "./helpers";
 
 export const ScoreboardView = () => {
-  useEffect(() => {
-    axios.get("/scores/hard").then(response => {
-      console.log(response);
-    });
-  });
+  const [scores, setScores] = useState([]);
 
-  const {
-    state: { nickname }
-  } = useContext(store);
-  return <div>{nickname}</div>;
+  useEffect(() => {
+    axios.get("/scores/hard").then(({ data }) => {
+      setScores(data);
+    });
+  }, []);
+
+  const renderScores = () => {
+    const scoresArray = [
+      <li className="scoreboard__list score score__header">
+        <div className="score__position">Position</div>
+        <div className="score__name">Nickname</div>
+        <div className="score__time">Result</div>
+      </li>
+    ];
+    let i = 0;
+    scores.map(({ name, time: { minutes, seconds, miliSeconds } }) => {
+      i++;
+      scoresArray.push(
+        <li className="scoreboard__list score">
+          <div className="score__position">{i}.</div>
+          <div className="score__name">{name}</div>
+          <div className="score__time">
+            {renderTime(minutes, seconds, miliSeconds)}
+          </div>
+        </li>
+      );
+    });
+
+    return scoresArray;
+  };
+
+  return <div className="scoreboard__list">{renderScores()}</div>;
 };

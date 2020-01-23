@@ -24,6 +24,34 @@
       margin-top: 4rem;
     }
   }
+
+  &__list {
+    width: 100%;
+
+    .score {
+      font-size: 2rem;
+      width: 100%;
+      display: flex;
+      border-bottom: 1.5px solid black;
+      &__position {
+        font-size: 1.5rem;
+        width: 100%;
+      }
+      &__name {
+        font-size: 1.5rem;
+        width: 100%;
+      }
+      &__time {
+        width: 100%;
+        font-size: 1.5rem;
+      }
+      &__header {
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
   &__error {
     @include flex-center;
     position: absolute;

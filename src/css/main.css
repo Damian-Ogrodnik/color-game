@@ -452,6 +452,39 @@
   margin-top: 4rem;
 }
 
+.scoreboard__list {
+  width: 100%;
+}
+
+.scoreboard__list .score {
+  font-size: 2rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1.5px solid black;
+}
+
+.scoreboard__list .score__position {
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.scoreboard__list .score__name {
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.scoreboard__list .score__time {
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.scoreboard__list .score__header {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
 .scoreboard__error {
   display: -webkit-box;
   display: -ms-flexbox;
