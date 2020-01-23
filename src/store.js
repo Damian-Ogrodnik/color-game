@@ -37,8 +37,6 @@ const StateProvider = ({ children }) => {
         return { ...state, time: action.time };
       case "OPEN_SCORE_MODAL":
         return { ...state, openScoreModal: action.openScoreModal };
-      case "OPEN_SCORE_MODAL_VIEW":
-        return { ...state, openScoreModalView: action.openScoreModalView };
       case "VALUE_NICKNAME":
         return { ...state, nickname: action.nickname };
       case "RESET_GAME":

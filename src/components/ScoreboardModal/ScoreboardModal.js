@@ -23,11 +23,17 @@ const customStyles = {
   }
 };
 
-export const ScoreboardModal = () => {
+export const ScoreboardModal = props => {
   const {
-    state: { openScoreModal, openScoreModalView }
+    state: { openScoreModal, nickname }
   } = useContext(store);
-
+  const renderView = () => {
+    if (props.selectedButton === "scores" || nickname) {
+      return <ScoreboardView />;
+    } else {
+      return <ScoreboardInput />;
+    }
+  };
   return (
     <Modal
       isOpen={openScoreModal}
@@ -36,7 +42,7 @@ export const ScoreboardModal = () => {
     >
       <div className="modal">
         <ScoreboardClose />
-        {openScoreModalView ? <ScoreboardView /> : <ScoreboardInput />}
+        {renderView()}
       </div>
     </Modal>
   );
