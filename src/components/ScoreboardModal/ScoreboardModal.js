@@ -27,6 +27,7 @@ export const ScoreboardModal = props => {
   const {
     state: { openScoreModal, nickname }
   } = useContext(store);
+
   const renderView = () => {
     if (props.selectedButton === "scores" || nickname) {
       return <ScoreboardView />;
@@ -34,6 +35,7 @@ export const ScoreboardModal = props => {
       return <ScoreboardInput />;
     }
   };
+
   return (
     <Modal
       isOpen={openScoreModal}

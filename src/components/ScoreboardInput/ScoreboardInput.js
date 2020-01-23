@@ -3,25 +3,25 @@ import React, { useState, useContext } from "react";
 import axios from "../../axios/axiosSettings";
 import { store } from "../../store";
 
-import { Error } from "../Error";
+import { handleError } from "./helpers";
 
 export const ScoreboardInput = () => {
   const [nickname, setNickname] = useState("");
   const [error, setError] = useState("");
+
   const globalState = useContext(store);
   const { dispatch } = globalState;
   const {
-    state: { selectedLevel, time }
+    state: { time }
   } = useContext(store);
 
   const handleChange = ({ target }) => {
     setNickname(target.value);
-    console.log(nickname);
   };
 
   const saveNickname = e => {
-    const { minutes, seconds, miliSeconds } = time;
     e.preventDefault();
+    const { minutes, seconds, miliSeconds } = time;
     if (!nickname) {
       setError("NO-NICKNAME");
     } else if (nickname.length < 4) {
@@ -35,25 +35,12 @@ export const ScoreboardInput = () => {
         })
         .then(() => {
           dispatch({ type: "VALUE_NICKNAME", nickname });
+        })
+        .catch(error => {
+          error.response
+            ? setError("NICKNAME-TAKEN")
+            : setError("SERVER-ERROR");
         });
-    }
-  };
-
-  const renderError = () => {
-    if (error === "NO-NICKNAME") {
-      return (
-        <Error
-          msg={"You have to enter your nickname before save. "}
-          class_Name={"scoreboard__error"}
-        />
-      );
-    } else if (error === "SHORT-NICKNAME") {
-      return (
-        <Error
-          msg={"Your nickname is to short. "}
-          class_Name={"scoreboard__error"}
-        />
-      );
     }
   };
 
@@ -70,7 +57,7 @@ export const ScoreboardInput = () => {
           ></input>
         </label>
       </form>
-      {renderError()}
+      {handleError(error)}
       <button onClick={e => saveNickname(e)}>Save</button>
     </div>
   );
