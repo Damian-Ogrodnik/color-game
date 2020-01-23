@@ -10,6 +10,14 @@ export const Scoreboard = () => {
   return (
     <>
       <button
+        onClick={() => {
+          dispatch({ type: "OPEN_SCORE_MODAL", openScoreModal: true });
+          dispatch({ type: "OPEN_SCORE_MODAL_VIEW", openScoreModalView: true });
+        }}
+      >
+        SCORES
+      </button>
+      <button
         onClick={() =>
           dispatch({ type: "OPEN_SCORE_MODAL", openScoreModal: true })
         }

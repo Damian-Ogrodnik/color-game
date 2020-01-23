@@ -23,7 +23,7 @@ export const ScoreboardInput = () => {
       setError("SHORT-NICKNAME");
     } else {
       dispatch({ type: "VALUE_NICKNAME", nickname });
-      dispatch({ type: "SET_NICKNAME", setNickname: true });
+      dispatch({ type: "OPEN_SCORE_MODAL_VIEW", openScoreModalView: true });
     }
   };
 

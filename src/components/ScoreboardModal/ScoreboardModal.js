@@ -25,7 +25,7 @@ const customStyles = {
 
 export const ScoreboardModal = () => {
   const {
-    state: { openScoreModal, setNickname }
+    state: { openScoreModal, openScoreModalView }
   } = useContext(store);
 
   return (
@@ -36,7 +36,7 @@ export const ScoreboardModal = () => {
     >
       <div className="modal">
         <ScoreboardClose />
-        {setNickname ? <ScoreboardView /> : <ScoreboardInput />}
+        {openScoreModalView ? <ScoreboardView /> : <ScoreboardInput />}
       </div>
     </Modal>
   );
