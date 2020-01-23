@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 
+import axios from "../../axios/axiosSettings";
 import { store } from "../../store";
 
 import { Error } from "../Error";
@@ -9,6 +10,9 @@ export const ScoreboardInput = () => {
   const [error, setError] = useState("");
   const globalState = useContext(store);
   const { dispatch } = globalState;
+  const {
+    state: { selectedLevel, time }
+  } = useContext(store);
 
   const handleChange = ({ target }) => {
     setNickname(target.value);
@@ -16,13 +20,22 @@ export const ScoreboardInput = () => {
   };
 
   const saveNickname = e => {
+    const { minutes, seconds, miliSeconds } = time;
     e.preventDefault();
     if (!nickname) {
       setError("NO-NICKNAME");
     } else if (nickname.length < 4) {
       setError("SHORT-NICKNAME");
     } else {
-      dispatch({ type: "VALUE_NICKNAME", nickname });
+      axios
+        .post(`/scores/hard/${nickname}`, {
+          minutes,
+          seconds,
+          miliSeconds
+        })
+        .then(() => {
+          dispatch({ type: "VALUE_NICKNAME", nickname });
+        });
     }
   };
 

@@ -1,7 +1,9 @@
 export const renderTime = (minutes, seconds, miliSeconds) => {
-  let min = minutes.toString();
-  let sec = seconds.toString();
-  let mili = miliSeconds.toString();
+  let min, sec, mili;
+  minutes ? (min = minutes.toString()) : (min = "0");
+  seconds ? (sec = seconds.toString()) : (sec = "0");
+  miliSeconds ? (mili = miliSeconds.toString()) : (mili = "0");
+
   min.length === 1 ? (min = `0${minutes}`) : (min = minutes);
   sec.length === 1 ? (sec = `0${seconds}`) : (sec = seconds);
   mili.length === 1

@@ -23,7 +23,7 @@ export const ScoreboardView = () => {
     let i = 0;
     scores.map(({ name, time: { minutes, seconds, miliSeconds } }) => {
       i++;
-      scoresArray.push(
+      return scoresArray.push(
         <li className="scoreboard__list score">
           <div className="score__position">{i}.</div>
           <div className="score__name">{name}</div>
@@ -34,7 +34,7 @@ export const ScoreboardView = () => {
       );
     });
 
-    return scoresArray;
+    return scoresArray.splice(0, 11);
   };
 
   return <div className="scoreboard__list">{renderScores()}</div>;
