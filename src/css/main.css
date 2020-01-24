@@ -485,6 +485,10 @@
   margin-bottom: 1rem;
 }
 
+.scoreboard__list .score .bold {
+  font-weight: 700;
+}
+
 .scoreboard__error {
   display: -webkit-box;
   display: -ms-flexbox;

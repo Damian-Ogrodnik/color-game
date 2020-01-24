@@ -14,3 +14,24 @@ export const renderTime = (minutes, seconds, miliSeconds) => {
 
   return `${min}:${sec}:${mili}`;
 };
+
+export const getScores = async (data, nickname) => {
+  let dataPositions = await data.map((record, index) => {
+    return { ...record, position: index + 1 };
+  });
+
+  let arr;
+  if (!nickname) return dataPositions.splice(0, 10);
+  let i = 0;
+  await dataPositions.forEach(record => {
+    i++;
+    if (record.name === nickname) {
+      if (i < 10) {
+        return (arr = dataPositions.slice(0, 10));
+      } else {
+        return (arr = dataPositions.slice(i - 10, i));
+      }
+    }
+  });
+  return arr;
+};
