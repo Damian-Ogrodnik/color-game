@@ -10,15 +10,15 @@ import { ScoreboardElement } from "./ScoreboardElement";
 export const ScoreboardView = () => {
   const [scores, setScores] = useState([]);
   const {
-    state: { nickname }
+    state: { nickname, selectedLevel }
   } = useContext(store);
 
   useEffect(() => {
-    axios.get("/scores/hard").then(async ({ data }) => {
+    axios.get(`/scores/${selectedLevel}`).then(async ({ data }) => {
       let properScores = await getScores(data, nickname);
       setScores(properScores);
     });
-  }, [nickname]);
+  }, [nickname, selectedLevel]);
 
   const renderScores = () => {
     const scoresArray = [<ScoreboardHeader />];

@@ -12,7 +12,7 @@ export const ScoreboardInput = () => {
   const globalState = useContext(store);
   const { dispatch } = globalState;
   const {
-    state: { time }
+    state: { time, selectedLevel }
   } = useContext(store);
 
   const handleChange = ({ target }) => {
@@ -28,7 +28,7 @@ export const ScoreboardInput = () => {
       setError("SHORT-NICKNAME");
     } else {
       axios
-        .post(`/scores/hard/${nickname}`, {
+        .post(`/scores/${selectedLevel}/${nickname}`, {
           minutes,
           seconds,
           miliSeconds
