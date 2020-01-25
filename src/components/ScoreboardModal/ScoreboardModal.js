@@ -21,7 +21,6 @@ export const ScoreboardModal = props => {
       return <ScoreboardInput />;
     }
   };
-
   return (
     <Modal
       isOpen={openScoreModal}

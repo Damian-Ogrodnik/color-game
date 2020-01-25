@@ -47,8 +47,11 @@ const StateProvider = ({ children }) => {
           openModal: false,
           colorsArray: [],
           clicks: 0,
-          time: 0,
-          gameFinished: false
+          time: {},
+          gameFinished: false,
+          openScoreModal: false,
+          openScoreModalView: false,
+          nickname: null
         };
       default:
         throw new Error();
