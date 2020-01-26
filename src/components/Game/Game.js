@@ -10,9 +10,8 @@ import { Level } from "../Level";
 import { easyData, mediumData, hardData } from "../../data/data";
 
 export const Game = () => {
-  const globalState = useContext(store);
-  const { dispatch } = globalState;
   const {
+    dispatch,
     state: { selectedLevel, colorsArray, clicks, gameFinished }
   } = useContext(store);
 

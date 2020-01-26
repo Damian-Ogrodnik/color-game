@@ -5,8 +5,7 @@ import { store } from "../../store";
 import { InfoModal } from "../InfoModal";
 
 export const Help = () => {
-  const globalState = useContext(store);
-  const { dispatch } = globalState;
+  const { dispatch } = useContext(store);
 
   const openModal = () => dispatch({ type: "OPEN_MODAL", openModal: true });
 

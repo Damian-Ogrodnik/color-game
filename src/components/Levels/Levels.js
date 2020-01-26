@@ -2,9 +2,8 @@ import React, { useContext } from "react";
 import { store } from "../../store";
 
 export const Levels = () => {
-  const globalState = useContext(store);
-  const { dispatch } = globalState;
   const {
+    dispatch,
     state: { selectedLevel }
   } = useContext(store);
 

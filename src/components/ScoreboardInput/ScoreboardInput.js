@@ -9,9 +9,8 @@ export const ScoreboardInput = () => {
   const [nickname, setNickname] = useState("");
   const [error, setError] = useState("");
 
-  const globalState = useContext(store);
-  const { dispatch } = globalState;
   const {
+    dispatch,
     state: { time, selectedLevel }
   } = useContext(store);
 

@@ -6,8 +6,7 @@ import { ScoreboardModal } from "../ScoreboardModal";
 
 export const Scoreboard = () => {
   const [selectedButton, setSelectedButton] = useState("");
-  const globalState = useContext(store);
-  const { dispatch } = globalState;
+  const { dispatch } = useContext(store);
 
   const handleClick = ({ target }) => {
     if (target.value === "post") {

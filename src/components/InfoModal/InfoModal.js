@@ -7,9 +7,8 @@ import { customStyles } from "./styles";
 Modal.setAppElement("#root");
 
 export const InfoModal = () => {
-  const globalState = useContext(store);
-  const { dispatch } = globalState;
   const {
+    dispatch,
     state: { openModal }
   } = useContext(store);
 
