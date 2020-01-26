@@ -5,8 +5,7 @@ import { store } from "../../store";
 import { Scoreboard } from "../Scoreboard";
 
 export const SummaryNavigation = () => {
-  const globalState = useContext(store);
-  const { dispatch } = globalState;
+  const { dispatch } = useContext(store);
 
   return (
     <div className="summary__navigation">

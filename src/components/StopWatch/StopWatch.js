@@ -2,9 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { store } from "../../store";
 
 export const StopWatch = () => {
-  const globalState = useContext(store);
-  const { dispatch } = globalState;
   const {
+    dispatch,
     state: { clicks }
   } = useContext(store);
 

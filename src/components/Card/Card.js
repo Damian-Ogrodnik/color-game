@@ -2,9 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { store } from "../../store";
 
 export const Card = ({ cardNum, colors }) => {
-  const globalState = useContext(store);
-  const { dispatch } = globalState;
   const {
+    dispatch,
     state: { colorsArray }
   } = useContext(store);
 

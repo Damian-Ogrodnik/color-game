@@ -3,8 +3,7 @@ import React, { useContext } from "react";
 import { store } from "../../store";
 
 export const ScoreboardClose = () => {
-  const globalState = useContext(store);
-  const { dispatch } = globalState;
+  const { dispatch } = useContext(store);
   return (
     <button
       className="modal__btn--close"

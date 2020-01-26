@@ -5,9 +5,8 @@ import { store } from "../../store";
 import { Error } from "../Error";
 
 export const Start = () => {
-  const globalState = useContext(store);
-  const { dispatch } = globalState;
   const {
+    dispatch,
     state: { selectedLevel, startError }
   } = useContext(store);
 
