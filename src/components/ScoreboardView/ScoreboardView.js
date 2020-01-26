@@ -4,31 +4,27 @@ import axios from "../../axios/axiosSettings";
 import { store } from "../../store";
 
 import { getScores } from "./helpers";
-import { ScoreboardHeader } from "./ScoreboardHeader";
-import { ScoreboardElement } from "./ScoreboardElement";
+import { ScoreboardList } from "./ScoreboardList/ScoreboardList";
 
 export const ScoreboardView = () => {
+  const [loading, setLoading] = useState(false);
   const [scores, setScores] = useState([]);
   const {
     state: { nickname, selectedLevel }
   } = useContext(store);
 
   useEffect(() => {
+    setLoading(true);
     axios.get(`/scores/${selectedLevel}`).then(async ({ data }) => {
       let properScores = await getScores(data, nickname);
       setScores(properScores);
+      setLoading(false);
     });
   }, [nickname, selectedLevel]);
 
-  const renderScores = () => {
-    const scoresArray = [<ScoreboardHeader />];
-
-    scores.map(data => {
-      return scoresArray.push(<ScoreboardElement data={data} />);
-    });
-
-    return scoresArray;
-  };
-
-  return <div className="scoreboard__list">{renderScores()}</div>;
+  return (
+    <div className="scoreboard__list">
+      <ScoreboardList loading={loading} scores={scores} />
+    </div>
+  );
 };
