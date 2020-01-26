@@ -1,0 +1,9 @@
+.spinner {
+  @include flex-center;
+  flex-direction: column;
+  padding: 5rem;
+
+  p {
+    margin-top: 0.5rem;
+  }
+}

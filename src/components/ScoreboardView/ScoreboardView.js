@@ -18,7 +18,7 @@ export const ScoreboardView = () => {
     axios.get(`/scores/${selectedLevel}`).then(async ({ data }) => {
       let properScores = await getScores(data, nickname);
       setScores(properScores);
-      setLoading(false);
+      setLoading(true);
     });
   }, [nickname, selectedLevel]);
 
