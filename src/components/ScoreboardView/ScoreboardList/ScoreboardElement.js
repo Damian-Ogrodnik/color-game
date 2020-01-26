@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 
-import { store } from "../../store";
+import { store } from "../../../store";
 
-import { renderTime } from "./helpers";
+import { renderTime } from "../helpers";
 
 export const ScoreboardElement = ({
   data: {
