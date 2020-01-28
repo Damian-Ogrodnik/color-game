@@ -1,0 +1,11 @@
+.error {
+  @include flex-center;
+  flex-direction: column;
+  color: $error-font-color;
+  font-size: 1.5rem;
+
+  &__icon {
+    height: 5rem;
+    width: 5rem;
+  }
+}

@@ -8,6 +8,7 @@ import { ScoreboardList } from "./ScoreboardList/ScoreboardList";
 
 export const ScoreboardView = () => {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [scores, setScores] = useState([]);
   const {
     state: { nickname, selectedLevel }
@@ -15,16 +16,22 @@ export const ScoreboardView = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`/scores/${selectedLevel}`).then(async ({ data }) => {
-      let properScores = await getScores(data, nickname);
-      setScores(properScores);
-      setLoading(false);
-    });
+    axios
+      .get(`/scores/${selectedLevel}`)
+      .then(async ({ data }) => {
+        let properScores = await getScores(data, nickname);
+        setScores(properScores);
+        setLoading(false);
+      })
+      .catch(err => {
+        setLoading(false);
+        setError(true);
+      });
   }, [nickname, selectedLevel]);
 
   return (
     <div className="scoreboard__list">
-      <ScoreboardList loading={loading} scores={scores} />
+      <ScoreboardList loading={loading} scores={scores} error={error} />
     </div>
   );
 };
