@@ -15,7 +15,7 @@ export const InfoModal = () => {
   return (
     <Modal isOpen={openModal} style={customStyles} contentLabel="Example Modal">
       <div className="modal">
-        <h2 className="modal__title">Welcome to my color-game!</h2>
+        <h2 className="modal__title">Welcome to My Color Game!</h2>
         <p className="modal__text--body">
           I created this simple game to practise context state managment in
           React. To start the game you have to choose the level of difficulty
