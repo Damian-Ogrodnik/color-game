@@ -5,7 +5,7 @@ import { store } from "../../store";
 import { Error } from "../Error";
 import { StopWatch } from "../StopWatch";
 import { Summary } from "../Summary";
-import { Level } from "../Level";
+import { CardsView } from "../CardsView";
 
 import { easyData, mediumData, hardData } from "../../data/data";
 
@@ -30,11 +30,11 @@ export const Game = () => {
   const renderLevel = () => {
     switch (selectedLevel) {
       case "easy":
-        return <Level data={easyData} level={"easy"} />;
+        return <CardsView data={easyData} level={"easy"} />;
       case "medium":
-        return <Level data={mediumData} level={"medium"} />;
+        return <CardsView data={mediumData} level={"medium"} />;
       case "hard":
-        return <Level data={hardData} level={"hard"} />;
+        return <CardsView data={hardData} level={"hard"} />;
       default:
         return <Error msg={"Something went wrong..."} />;
     }
