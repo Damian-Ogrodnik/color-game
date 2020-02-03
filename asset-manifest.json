@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/color-game/static/css/main.6a606516.chunk.css",
-    "main.js": "/color-game/static/js/main.78bfe882.chunk.js",
-    "main.js.map": "/color-game/static/js/main.78bfe882.chunk.js.map",
+    "main.js": "/color-game/static/js/main.a3aaa781.chunk.js",
+    "main.js.map": "/color-game/static/js/main.a3aaa781.chunk.js.map",
     "runtime-main.js": "/color-game/static/js/runtime-main.0d3fb743.js",
     "runtime-main.js.map": "/color-game/static/js/runtime-main.0d3fb743.js.map",
     "static/js/2.290a3bc9.chunk.js": "/color-game/static/js/2.290a3bc9.chunk.js",
     "static/js/2.290a3bc9.chunk.js.map": "/color-game/static/js/2.290a3bc9.chunk.js.map",
     "index.html": "/color-game/index.html",
-    "precache-manifest.688a957d39896299e9d9b9eb17a2f076.js": "/color-game/precache-manifest.688a957d39896299e9d9b9eb17a2f076.js",
+    "precache-manifest.65af1c9bcb4ee28688a26062df275a71.js": "/color-game/precache-manifest.65af1c9bcb4ee28688a26062df275a71.js",
     "service-worker.js": "/color-game/service-worker.js",
     "static/css/main.6a606516.chunk.css.map": "/color-game/static/css/main.6a606516.chunk.css.map",
     "static/js/2.290a3bc9.chunk.js.LICENSE": "/color-game/static/js/2.290a3bc9.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0d3fb743.js",
     "static/js/2.290a3bc9.chunk.js",
     "static/css/main.6a606516.chunk.css",
-    "static/js/main.78bfe882.chunk.js"
+    "static/js/main.a3aaa781.chunk.js"
   ]
 }
